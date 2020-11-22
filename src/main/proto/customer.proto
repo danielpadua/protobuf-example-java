@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package danielpadua.protobufexample.contracts;
+
+option java_multiple_files = true;
+option java_outer_classname = "CustomerProto";
+option java_package = "dev.danielpadua.protobufexamplejava.contracts";
+option csharp_namespace = "DanielPadua.ProtobufExampleDotnet.Contracts";
+
+import "google/protobuf/timestamp.proto";
+import "money.proto";
+import "date.proto";
+
+message Customer {
+    int64 id = 1;
+    bytes photo = 2;
+    string name = 3;
+    google.type.Date birthdate = 4;
+    google.type.Money balance = 5;
+    google.protobuf.Timestamp createdAt = 6;
+    google.protobuf.Timestamp updatedAt = 7;
+}
